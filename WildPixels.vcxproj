@@ -19,6 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Controller.cpp" />
+    <ClCompile Include="src\GameComponents\Interfaces\MainMenu\MainMenu.cpp" />
+    <ClCompile Include="src\GameComponents\Bodies\IBody.cpp" />
+    <ClCompile Include="src\GameComponents\Entities\IEntity.cpp" />
+    <ClCompile Include="src\GameComponents\Interfaces\IInterface.cpp" />
+    <ClCompile Include="src\Engine\GameObject.cpp" />
+    <ClCompile Include="src\Configurator.cpp" />
     <ClCompile Include="src\Engine\LevelLoader.cpp" />
     <ClCompile Include="src\Source.cpp" />
     <ClCompile Include="src\Startup.cpp" />
@@ -27,15 +34,24 @@
     <Image Include="src\Content\image.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitignore" />
     <None Include="libjpeg-9.dll" />
     <None Include="libpng16-16.dll" />
     <None Include="libtiff-5.dll" />
     <None Include="libwebp-7.dll" />
+    <None Include="README.md" />
     <None Include="SDL2.dll" />
     <None Include="SDL2_image.dll" />
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Controller.h" />
+    <ClInclude Include="src\GameComponents\Interfaces\MainMenu\MainMenu.h" />
+    <ClInclude Include="src\GameComponents\Bodies\IBody.h" />
+    <ClInclude Include="src\GameComponents\Entities\IEntity.h" />
+    <ClInclude Include="src\GameComponents\Interfaces\IInterface.h" />
+    <ClInclude Include="src\Engine\GameObject.h" />
+    <ClInclude Include="src\Configurator.h" />
     <ClInclude Include="src\Engine\LevelLoader.h" />
     <ClInclude Include="src\Startup.h" />
     <ClInclude Include="src\Global.h" />
