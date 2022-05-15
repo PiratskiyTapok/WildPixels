@@ -1,17 +1,18 @@
 #include "Global.h"
-#include "Configurator.h"
+#include "Services/Configuration/Configurator.h"
 
 
 int main(int argc, char* args[])
 {
-	Configurator::configure();
-
-	//Wait two seconds
+	const auto conf = new Configurator(Configurator::Action::INIT);
 	SDL_Delay(2000);
 
-	Configurator::configure();
-
+	delete conf;
+	
+	const auto conf2 = new Configurator(Configurator::Action::SCREEN_RESOLUTION_CHANGE, new ScreenSize(320, 240));
 	SDL_Delay(2000);
+
+	delete conf2;
 
 	return 0;
 }

@@ -18,31 +18,28 @@
     <ClCompile Include="src\Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Startup.cpp">
+    <ClCompile Include="src\Services\Level\LevelLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\LevelLoader.cpp">
+    <ClCompile Include="src\Services\Configuration\Configurator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Configurator.cpp">
+    <ClCompile Include="src\Nodes\GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\GameObject.cpp">
+    <ClCompile Include="src\Nodes\Interfaces\IInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameComponents\Interfaces\IInterface.cpp">
+    <ClCompile Include="src\Nodes\Entities\IEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameComponents\Entities\IEntity.cpp">
+    <ClCompile Include="src\Nodes\Bodies\IBody.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameComponents\Bodies\IBody.cpp">
+    <ClCompile Include="src\Nodes\Interfaces\MainMenu\MainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameComponents\Interfaces\MainMenu\MainMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Controller.cpp">
+    <ClCompile Include="src\Services\Configuration\Configuration.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -63,34 +60,34 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Startup.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Engine\LevelLoader.h">
+    <ClInclude Include="src\Services\Level\LevelLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Configurator.h">
+    <ClInclude Include="src\Services\Configuration\Configurator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Engine\GameObject.h">
+    <ClInclude Include="src\Nodes\GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameComponents\Interfaces\IInterface.h">
+    <ClInclude Include="src\Nodes\Interfaces\IInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameComponents\Entities\IEntity.h">
+    <ClInclude Include="src\Nodes\Entities\IEntity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameComponents\Bodies\IBody.h">
+    <ClInclude Include="src\Nodes\Bodies\IBody.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameComponents\Interfaces\MainMenu\MainMenu.h">
+    <ClInclude Include="src\Nodes\Interfaces\MainMenu\MainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Controller.h">
+    <ClInclude Include="src\Services\Configuration\Configuration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Services\IService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

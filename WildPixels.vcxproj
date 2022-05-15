@@ -19,16 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Controller.cpp" />
-    <ClCompile Include="src\GameComponents\Interfaces\MainMenu\MainMenu.cpp" />
-    <ClCompile Include="src\GameComponents\Bodies\IBody.cpp" />
-    <ClCompile Include="src\GameComponents\Entities\IEntity.cpp" />
-    <ClCompile Include="src\GameComponents\Interfaces\IInterface.cpp" />
-    <ClCompile Include="src\Engine\GameObject.cpp" />
-    <ClCompile Include="src\Configurator.cpp" />
-    <ClCompile Include="src\Engine\LevelLoader.cpp" />
+    <ClCompile Include="src\Services\Configuration\Configuration.cpp" />
+    <ClCompile Include="src\Nodes\Interfaces\MainMenu\MainMenu.cpp" />
+    <ClCompile Include="src\Nodes\Bodies\IBody.cpp" />
+    <ClCompile Include="src\Nodes\Entities\IEntity.cpp" />
+    <ClCompile Include="src\Nodes\Interfaces\IInterface.cpp" />
+    <ClCompile Include="src\Nodes\GameObject.cpp" />
+    <ClCompile Include="src\Services\Configuration\Configurator.cpp" />
+    <ClCompile Include="src\Services\Level\LevelLoader.cpp" />
     <ClCompile Include="src\Source.cpp" />
-    <ClCompile Include="src\Startup.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\Content\image.bmp" />
@@ -45,15 +44,15 @@
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Controller.h" />
-    <ClInclude Include="src\GameComponents\Interfaces\MainMenu\MainMenu.h" />
-    <ClInclude Include="src\GameComponents\Bodies\IBody.h" />
-    <ClInclude Include="src\GameComponents\Entities\IEntity.h" />
-    <ClInclude Include="src\GameComponents\Interfaces\IInterface.h" />
-    <ClInclude Include="src\Engine\GameObject.h" />
-    <ClInclude Include="src\Configurator.h" />
-    <ClInclude Include="src\Engine\LevelLoader.h" />
-    <ClInclude Include="src\Startup.h" />
+    <ClInclude Include="src\Services\IService.h" />
+    <ClInclude Include="src\Services\Configuration\Configuration.h" />
+    <ClInclude Include="src\Nodes\Interfaces\MainMenu\MainMenu.h" />
+    <ClInclude Include="src\Nodes\Bodies\IBody.h" />
+    <ClInclude Include="src\Nodes\Entities\IEntity.h" />
+    <ClInclude Include="src\Nodes\Interfaces\IInterface.h" />
+    <ClInclude Include="src\Nodes\GameObject.h" />
+    <ClInclude Include="src\Services\Configuration\Configurator.h" />
+    <ClInclude Include="src\Services\Level\LevelLoader.h" />
     <ClInclude Include="src\Global.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -116,8 +115,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Projects\WildPixels\libraries\SDL_image\include;C:\Projects\WildPixels\libraries\SDL\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Projects\WildPixels\libraries\SDL_image\lib\x64;C:\Projects\WildPixels\libraries\SDL\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Projects\WildPixels\libraries\SDL_mixer\include;C:\Projects\WildPixels\libraries\SDL_image\include;C:\Projects\WildPixels\libraries\SDL\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Projects\WildPixels\libraries\SDL_mixer\lib\x64;C:\Projects\WildPixels\libraries\SDL_image\lib\x64;C:\Projects\WildPixels\libraries\SDL\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -160,7 +159,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
