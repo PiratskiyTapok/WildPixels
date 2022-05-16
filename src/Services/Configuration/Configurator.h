@@ -17,7 +17,8 @@ public:
 		INIT,
 		SCREEN_RESOLUTION_CHANGE,
 		MAIN_SOUND_VOLUME_CHANGE,
-		EFFECT_SOUND_VOLUME_CHANGE
+		EFFECT_SOUND_VOLUME_CHANGE,
+		QUIT
 	};
 
 	Configurator(const Action action)
@@ -26,43 +27,22 @@ public:
 		Configurator::serve();
 	}
 
-	Configurator(Action action, ScreenSize* screenSize)
+	Configurator(Action action, const ScreenSize* screenSize) : Configurator(action)
 	{
-		if (action != Action::SCREEN_RESOLUTION_CHANGE)
-		{
-			throw std::exception("Action is not valid");
-		}
-
 		this->screenSize = new ScreenSize(screenSize->SCREEN_WIDTH, screenSize->SCREEN_HEIGHT);
-		this->action = action;
-		Configurator::serve();
 	}
 
-	Configurator(Action action, int volume)
+	Configurator(Action action, int volume) : Configurator(action)
 	{
-		if (action == Action::MAIN_SOUND_VOLUME_CHANGE)
-		{
-			mainVolume = volume;
-		}
-		else if (action == Action::EFFECT_SOUND_VOLUME_CHANGE)
-		{
-			effectVolume = volume;
-		}
-		else
-		{
-			throw std::exception("Action is not valid");
-		}
-
-		this->action = action;
-		Configurator::serve();
+		this->volume = volume;
 	}
 
-	static void setWindow(SDL_Window* window)
+	static void storeWindow(SDL_Window* window)
 	{
 		Configuration::window = window;
 	}
 
-	static void setScreenSurface(SDL_Surface* screenSurface)
+	static void storeScreenSurface(SDL_Surface* screenSurface)
 	{
 		Configuration::screenSurface = screenSurface;
 	}
@@ -72,21 +52,19 @@ public:
 	~Configurator() override
 	{
 		delete screenSize;
-		SDLFree();
 	}
 
 private:
 	Action action;
 	ScreenSize* screenSize = nullptr;
-	int mainVolume;
-	int effectVolume;
-	static void init();
-	static void SDLInit();
-	static void SDLImageInit();
-	static void SDLSoundInit();
-	static void windowInit();
-	static void SDLFree();
-	static void configureScreenResolution(const ScreenSize* screenSize);
-	static void configureMainSoundVolume(int volume);
-	static void configureEffectSoundVolume(int volume);
+	int volume = -1;
+	void init();
+	void SDLInit();
+	void SDLImageInit();
+	void SDLSoundInit();
+	void windowInit();
+	void quit();
+	void configureScreenResolution();
+	void configureMainSoundVolume();
+	void configureEffectSoundVolume();
 };

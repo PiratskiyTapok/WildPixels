@@ -27,13 +27,20 @@ public:
 	{
 		return screenSurface;
 	}
-
 	static void freeWindow()
 	{
 		SDL_DestroyWindow(window);
 		window = nullptr;
+		screenSize = nullptr;
 	}
 
+	static void freeStorage()
+	{
+		delete screenSize;
+		freeWindow();
+		window = nullptr;
+		screenSize = nullptr;
+	}
 private:
 	static ScreenSize* screenSize;
 	static int mainVolume;

@@ -18,7 +18,7 @@
     <ClCompile Include="src\Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Services\Level\LevelLoader.cpp">
+    <ClCompile Include="src\Services\Loaders\LevelLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Services\Configuration\Configurator.cpp">
@@ -39,7 +39,10 @@
     <ClCompile Include="src\Nodes\Interfaces\MainMenu\MainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Services\Configuration\Configuration.cpp">
+    <ClCompile Include="src\Nodes\Configuration\Configuration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Services\Loaders\ConfigLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -58,12 +61,24 @@
     <None Include="zlib1.dll" />
     <None Include=".gitignore" />
     <None Include="README.md" />
+    <None Include="libFLAC-8.dll" />
+    <None Include="libmodplug-1.dll" />
+    <None Include="libmpg123-0.dll" />
+    <None Include="libogg-0.dll" />
+    <None Include="libopus-0.dll" />
+    <None Include="libopusfile-0.dll" />
+    <None Include="libvorbis-0.dll" />
+    <None Include="libvorbisfile-3.dll" />
+    <None Include="SDL2_mixer.dll" />
+    <None Include="src\Nodes\Configuration\config.cfg">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Services\Level\LevelLoader.h">
+    <ClInclude Include="src\Services\Loaders\LevelLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Services\Configuration\Configurator.h">
@@ -84,10 +99,13 @@
     <ClInclude Include="src\Nodes\Interfaces\MainMenu\MainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Services\Configuration\Configuration.h">
+    <ClInclude Include="src\Nodes\Configuration\Configuration.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Services\IService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Services\Loaders\ConfigLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

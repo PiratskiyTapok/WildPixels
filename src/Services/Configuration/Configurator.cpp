@@ -8,15 +8,16 @@ void Configurator::serve()
 		init();
 		break;
 	case Action::SCREEN_RESOLUTION_CHANGE:
-		configureScreenResolution(screenSize);
+		configureScreenResolution();
 		break;
 	case Action::MAIN_SOUND_VOLUME_CHANGE:
-		configureMainSoundVolume(mainVolume);
+		configureMainSoundVolume();
 		break;
 	case Action::EFFECT_SOUND_VOLUME_CHANGE:
-		configureEffectSoundVolume(effectVolume);
+		configureEffectSoundVolume();
 		break;
-	default:
+	case Action::QUIT:
+		quit();
 		break;
 	}
 }
@@ -72,35 +73,46 @@ void Configurator::windowInit()
 	}
 
 	//Set window
-	setWindow(window);
+	storeWindow(window);
 	//Get window surface
-	setScreenSurface(SDL_GetWindowSurface(window));
+	storeScreenSurface(SDL_GetWindowSurface(window));
 }
 
-void Configurator::SDLFree()
+void Configurator::quit()
 {
-	//Destroy window
-	if (Configuration::getWindow())
-	{
-		Configuration::freeWindow();
-	}
+	Configuration::freeStorage();
 
 	//Quit SDL subsystems
+	Mix_Quit();
+	IMG_Quit();
 	SDL_Quit();
 }
 
-void Configurator::configureScreenResolution(const ScreenSize* screenSize)
+void Configurator::configureScreenResolution()
 {
+	if (!screenSize)
+	{
+		throw std::exception("Action is not valid");
+	}
+
 	Configuration::screenSize->SCREEN_WIDTH = screenSize->SCREEN_WIDTH;
 	Configuration::screenSize->SCREEN_HEIGHT = screenSize->SCREEN_HEIGHT;
 	Configuration::freeWindow();
 	windowInit();
 }
 
-void Configurator::configureMainSoundVolume(int volume)
+void Configurator::configureMainSoundVolume()
 {
+	if (volume == -1)
+	{
+		throw std::exception("Action is not valid");
+	}
 }
 
-void Configurator::configureEffectSoundVolume(int volume)
+void Configurator::configureEffectSoundVolume()
 {
+	if (volume == -1)
+	{
+		throw std::exception("Action is not valid");
+	}
 }
