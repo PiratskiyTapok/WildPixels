@@ -45,6 +45,9 @@
     <ClCompile Include="src\Services\Loaders\ConfigLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Services\Loaders\Parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\Content\image.bmp">
@@ -75,7 +78,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Global.h">
+    <ClInclude Include="src\GlobalStructures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Services\Loaders\LevelLoader.h">
@@ -106,6 +109,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Services\Loaders\ConfigLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nodes\Node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Services\Loaders\Parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

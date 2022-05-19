@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Services\Loaders\Parser.cpp" />
     <ClCompile Include="src\Services\Loaders\ConfigLoader.cpp" />
     <ClCompile Include="src\Nodes\Configuration\Configuration.cpp" />
     <ClCompile Include="src\Nodes\Interfaces\MainMenu\MainMenu.cpp" />
@@ -55,6 +56,8 @@
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Services\Loaders\Parser.h" />
+    <ClInclude Include="src\Nodes\Node.h" />
     <ClInclude Include="src\Services\Loaders\ConfigLoader.h" />
     <ClInclude Include="src\Services\IService.h" />
     <ClInclude Include="src\Nodes\Configuration\Configuration.h" />
@@ -65,7 +68,7 @@
     <ClInclude Include="src\Nodes\GameObject.h" />
     <ClInclude Include="src\Services\Configuration\Configurator.h" />
     <ClInclude Include="src\Services\Loaders\LevelLoader.h" />
-    <ClInclude Include="src\Global.h" />
+    <ClInclude Include="src\GlobalStructures.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

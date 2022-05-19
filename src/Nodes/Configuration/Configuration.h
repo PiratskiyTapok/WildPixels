@@ -1,50 +1,36 @@
 #pragma once
 #include <SDL.h>
-#include "../../Global.h"
+#include "../../GlobalStructures.h"
 
 class Configuration
 {
-	friend class Configurator;
-
 public:
-	static ScreenSize* getScreenSize()
+	Configuration()
 	{
-		return screenSize;
-	}
-	static int getMainSoundVolume()
-	{
-		return mainVolume;
-	}
-	static int getEffectSoundVolume()
-	{
-		return effectVolume;
-	}
-	static SDL_Window* getWindow()
-	{
-		return window;
-	}
-	static SDL_Surface* getScreenSurface()
-	{
-		return screenSurface;
-	}
-	static void freeWindow()
-	{
-		SDL_DestroyWindow(window);
-		window = nullptr;
 		screenSize = nullptr;
+		window = nullptr;
+		screenSurface = nullptr;
+		mainVolume = -1;
+		effectVolume = -1;
 	}
-
-	static void freeStorage()
+	Configuration(const Configuration &obj)
+	{
+		this->screenSize = new ScreenSize(obj.screenSize->SCREEN_WIDTH, obj.screenSize->SCREEN_HEIGHT);
+		window = 
+	}
+	~Configuration()
 	{
 		delete screenSize;
-		freeWindow();
+		SDL_DestroyWindow(window);
+
 		window = nullptr;
 		screenSize = nullptr;
 	}
+
 private:
-	static ScreenSize* screenSize;
-	static int mainVolume;
-	static int effectVolume;
-	static SDL_Window* window;
-	static SDL_Surface* screenSurface;
+	ScreenSize* screenSize;
+	SDL_Window* window;
+	SDL_Surface* screenSurface;
+	int mainVolume;
+	int effectVolume;
 };

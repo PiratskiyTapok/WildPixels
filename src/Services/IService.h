@@ -2,8 +2,6 @@
 class IService
 {
 public:
-	virtual void serve() = 0;
-	virtual ~IService() = 0;
+	virtual void serve() {}
+	virtual ~IService() {}
 };
-
-inline IService::~IService() {}
